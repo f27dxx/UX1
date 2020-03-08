@@ -16,6 +16,7 @@ $(document).ready(function() {
 $('.spirit').on('click', function(){
   $('.offcanvas-collapse').toggleClass('open');
   $('.content').addClass('hidden');
+  $('.form').addClass('hidden');
   $('.searchResult').removeClass('hidden');
 
   var spiritName = this.innerText;
@@ -43,11 +44,25 @@ $('.spirit').on('click', function(){
 
 //end of off-canvas menu
 
+//user interaction
 $('.navbar-brand').on('click', function(){
   $('.content').removeClass('hidden');
   $('.searchResult').addClass('hidden');
+  $('.form').addClass('hidden');
+
 })
 
+$('#createRecipe').on('click', function(){
+  $('.offcanvas-collapse').toggleClass('open');
+  $('.form').removeClass('hidden');
+  $('.content').addClass('hidden');
+  $('.searchResult').addClass('hidden');
+})
+
+$('.fa-search').on('click', function(){
+  $('#searchbar').toggleClass('hidden');
+})
+//end of user interaction
 
 
 //dark theme

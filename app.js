@@ -46,6 +46,7 @@ $('.spirit').on('click', function(){
 
 //user interaction
 $('.navbar-brand').on('click', function(){
+  $('.offcanvas-collapse').removeClass('open');
   $('.content').removeClass('hidden');
   $('.searchResult').addClass('hidden');
   $('.form').addClass('hidden');

@@ -190,73 +190,61 @@
     <!-- ingredients -->
     <div class="form-row">
       <div class="form-group col-6">
-        <label for="quantity">Quantity</label>
-        <input type="number" class="form-control" name="quantity" id="quantity">
+        <label for="quantity[0]">Quantity</label>
+        <input type="number" class="form-control" name="quantity[0]" id="quantity">
       </div>
       <div class="form-group col-6">
-        <label for="measurement">Measurement</label>
-        <select class="form-control" id="measurement">
+        <label for="measurement[0]">Measurement</label>
+        <select class="form-control" id="measurement" name="measurement[0]">
           <option>ml</option>
           <option>dash</option>
           <option>drop</option>
           <option>bunch</option>
         </select>
       </div>
+      <div class="form-group col-12">
+        <label for="item[0]">Item</label>
+        <input type="text" class="form-control" name="item[0]" id="item">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="item">Item</label>
-      <input type="text" class="form-control" name="item" id="item">
-    </div>
+
     <div class="form-row">
       <div class="form-group col-6">
-        <label for="quantity">Quantity</label>
-        <input type="number" class="form-control" name="quantity" id="quantity">
+        <label for="quantity[1]">Quantity</label>
+        <input type="number" class="form-control" name="quantity[1]" id="quantity">
       </div>
       <div class="form-group col-6">
-        <label for="measurement">Measurement</label>
-        <select class="form-control" id="measurement">
+        <label for="measurement[1]">Measurement</label>
+        <select class="form-control" id="measurement" name="measurement[1]">
           <option>ml</option>
           <option>dash</option>
           <option>drop</option>
           <option>bunch</option>
         </select>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="item">Item</label>
-      <input type="text" class="form-control" name="item" id="item">
-    </div>
-    <div class="form-row">
-      <div class="form-group col-6">
-        <label for="quantity">Quantity</label>
-        <input type="number" class="form-control" name="quantity" id="quantity">
-      </div>
-      <div class="form-group col-6">
-        <label for="measurement">Measurement</label>
-        <select class="form-control" id="measurement">
-          <option>ml</option>
-          <option>dash</option>
-          <option>drop</option>
-          <option>bunch</option>
-        </select>
+      <div class="form-group col-12">
+        <label for="item[1]">Item</label>
+        <input type="text" class="form-control" name="item[1]" id="item">
       </div>
     </div>
-    <div class="form-group">
-      <label for="item">Item</label>
-      <input type="text" class="form-control" name="item" id="item">
-    </div>
+    <div class="newIngre"></div>
+    <button type="button" class="btn btn-link btn-lg btn-block" id='ingreButton'>Add more ingredients</button>
+
     <!-- end of ingredient -->
     <hr>
     <h6>Add your instructions one at a time</h6>
     <!-- method -->
     <div class="form-group">
-      <label for="step">step 1</label>
-      <textarea class="form-control" id="step" rows="3"></textarea>
+      <label for="step1">step 1</label>
+      <textarea class="form-control" id="step1" name="step1" rows="3"></textarea>
     </div>
     <div class="form-group">
-      <label for="step">step 2</label>
-      <textarea class="form-control" id="step" rows="3"></textarea>
+      <label for="step2">step 2</label>
+      <textarea class="form-control" id="step2" rows="3"></textarea>
     </div>
+    <div class="newStep"></div>
+    <button type="button" class="btn btn-link btn-lg btn-block" id='stepButton'>Add more steps</button>
+    <hr>
     <!-- end of method -->
     <input class="btn btn-primary mx-auto" type="submit" value="Submit">
 

@@ -102,6 +102,10 @@ body {
 .hidden {
   display: none;
 }
+
+#ingreButton, #stepButton {
+  color: #7DA2A9;
+}
 /* bootraps overide */
 .btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary::selection, .btn-primary:target {
   background-color: #7DA2A9 !important;
@@ -165,5 +169,11 @@ body {
 [data-theme="dark"] .modal-footer{
   background-color: #333 !important;
   color: #eee;
+}
+[data-theme="dark"] #ingreButton{
+  color: #FFF463;
+}
+[data-theme="dark"] #stepButton{
+  color: #FFF463;
 }
 /* dark theme css */

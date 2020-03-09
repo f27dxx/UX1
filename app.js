@@ -64,6 +64,51 @@ $('.fa-search').on('click', function(){
 })
 //end of user interaction
 
+//form ingredients count
+var ingredientsCount = 2;
+$('#ingreButton').on('click', function(){
+  var html = `<div class="form-row">
+                <div class="form-group col-6">
+                  <label for="quantity[${ingredientsCount}]">Quantity</label>
+                  <input type="number" class="form-control" name="quantity[${ingredientsCount}]" id="quantity">
+                </div>
+                <div class="form-group col-6">
+                  <label for="measurement[${ingredientsCount}]">Measurement</label>
+                  <select class="form-control" id="measurement" name="measurement[${ingredientsCount}]">
+                    <option>ml</option>
+                    <option>dash</option>
+                    <option>drop</option>
+                    <option>bunch</option>
+                  </select>
+                </div>
+                <div class="form-group col-12">
+                  <label for="item[${ingredientsCount}]">Item</label>
+                  <input type="text" class="form-control" name="item[${ingredientsCount}]" id="item">
+                </div>
+              </div>`
+  if(ingredientsCount<15) {
+    $(".newIngre").append(html);
+    ingredientsCount++
+  }
+ 
+
+})
+
+//form step count
+var stepCount = 3;
+$('#stepButton').on('click', function(){
+  var html = `<div class="form-group">
+                <label for="step1">step ${stepCount}</label>
+                <textarea class="form-control" name="step${stepCount}" rows="3"></textarea>
+              </div>`
+  if(stepCount<6) {
+    $(".newStep").append(html);
+    stepCount++
+  }
+ 
+
+})
+
 
 //dark theme
 !function(){var t,e=document.getElementById("darkSwitch");if(e){t=null!==localStorage.getItem("darkSwitch")&&"dark"===localStorage.getItem("darkSwitch"),(e.checked=t)?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme"),e.addEventListener("change",function(t){e.checked?(document.body.setAttribute("data-theme","dark"),localStorage.setItem("darkSwitch","dark")):(document.body.removeAttribute("data-theme"),localStorage.removeItem("darkSwitch"))})}}();

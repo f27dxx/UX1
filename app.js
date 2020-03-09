@@ -90,6 +90,9 @@ $('#ingreButton').on('click', function(){
     $(".newIngre").append(html);
     ingredientsCount++
   }
+  if(ingredientsCount==15) {
+    $("#ingreButton").text('Maxium 15 ingredients.');
+  }
  
 
 })
@@ -104,6 +107,10 @@ $('#stepButton').on('click', function(){
   if(stepCount<6) {
     $(".newStep").append(html);
     stepCount++
+  }
+
+  if(stepCount==6) {
+    $("#stepButton").text('Maxium 5 steps.');
   }
  
 

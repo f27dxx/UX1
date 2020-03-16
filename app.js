@@ -36,13 +36,16 @@ $('.spirit').on('click', function(){
                 </div>
                 </div>`
                 
-              $("#searchResult"+i).html(text);
+    $("#searchResult"+i).html(text);
     }
     console.log(data)
 });
 })
 
 //end of off-canvas menu
+var ingredientsCount = 2;
+var stepCount = 3;
+
 
 //user interaction
 $('.navbar-brand').on('click', function(){
@@ -50,7 +53,6 @@ $('.navbar-brand').on('click', function(){
   $('.content').removeClass('hidden');
   $('.searchResult').addClass('hidden');
   $('.form').addClass('hidden');
-
 })
 
 $('#createRecipe').on('click', function(){
@@ -58,6 +60,12 @@ $('#createRecipe').on('click', function(){
   $('.form').removeClass('hidden');
   $('.content').addClass('hidden');
   $('.searchResult').addClass('hidden');
+  $('.newIngre').empty();
+  $('.newStep').empty();
+  ingredientsCount = 2;
+  stepCount = 3;
+  $("#ingreButton").text('Add more ingredients.');
+  $("#stepButton").text('Add more steps.');
 })
 
 $('.fa-search').on('click', function(){
@@ -66,7 +74,6 @@ $('.fa-search').on('click', function(){
 //end of user interaction
 
 //form ingredients count
-var ingredientsCount = 2;
 $('#ingreButton').on('click', function(){
   var html = `<div class="form-row">
                 <div class="form-group col-6">
@@ -94,12 +101,9 @@ $('#ingreButton').on('click', function(){
   if(ingredientsCount==15) {
     $("#ingreButton").text('Maxium 15 ingredients.');
   }
- 
-
 })
 
 //form step count
-var stepCount = 3;
 $('#stepButton').on('click', function(){
   var html = `<div class="form-group">
                 <label for="step1">step ${stepCount}</label>
@@ -109,12 +113,9 @@ $('#stepButton').on('click', function(){
     $(".newStep").append(html);
     stepCount++
   }
-
   if(stepCount==6) {
     $("#stepButton").text('Maxium 5 steps.');
-  }
- 
-
+  } 
 })
 
 

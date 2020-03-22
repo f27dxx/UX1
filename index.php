@@ -16,6 +16,7 @@
   <title>UX1</title>
 </head>
 <body>
+<?php session_start(); ?>
 <?php require('./model/dbConnection.php') ?>
 <?php require('./model/dbFunctions.php') ?>
   <!-- modal -->
@@ -49,9 +50,13 @@
 
   <div class="navbar-collapse offcanvas-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" id='createRecipe'>
-        <a class="nav-link" href="#">Create your recipe</a>
-      </li>
+      <?php 
+        if($_SESSION['logged_in'] == 'yes') {
+          echo '<li class="nav-item" id="createRecipe">';
+          echo '<a class="nav-link" href="#">Create your recipe</a>';
+          echo '</li>';
+        };
+      ?>
       <li class="nav-item">
         <a class="nav-link spirit" href="#">Vodka</a>
       </li>
@@ -85,6 +90,9 @@
       </li>
       <li class="nav-item" style="position: absolute;, left:0; top:92%;">
         <a class="nav-link" href="#">Login/Sign up</a>
+      </li>
+      <li class="nav-item" style="position: absolute;, left:0; top:89%;">
+        <a class="nav-link" href="./controller/logout.php">Logout</a>
       </li>
     </ul>
     
@@ -260,7 +268,7 @@
 <!-- register form -->
 <div class="container">
   <h5>register form</h5>
-  <form action="/UX1/controller/register.php" method="post">
+  <form action="/UX1/controller/register.php" method="POST">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" name="username">
@@ -276,7 +284,7 @@
 <!-- login form -->
 <div class="container">
   <h5>login form</h5>
-  <form action="/UX1/controller/login.php" method="post">
+  <form action="/UX1/controller/login.php" method="POST">
     <div class="form-group">
       <label for="login-username">Username</label>
       <input type="text" class="form-control" id="login-username" name="login-username">

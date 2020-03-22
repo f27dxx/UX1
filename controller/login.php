@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require('../model/dbConnection.php');
 require('../model/dbFunctions.php');

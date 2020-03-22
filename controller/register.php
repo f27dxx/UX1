@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('../model/dbConnection.php');
 require('../model/dbFunctions.php');
 require('../model/inputFilter.php');

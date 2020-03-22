@@ -16,6 +16,8 @@
   <title>UX1</title>
 </head>
 <body>
+<?php require('./model/dbConnection.php') ?>
+<?php require('./model/dbFunctions.php') ?>
   <!-- modal -->
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -196,11 +198,11 @@
     <div class="form-row">
       <div class="form-group col-6">
         <label for="quantity[0]">Quantity</label>
-        <input type="number" class="form-control" name="quantity[0]" id="quantity">
+        <input type="number" class="form-control" name="quantity[0]" id="quantity[0]">
       </div>
       <div class="form-group col-6">
         <label for="measurement[0]">Measurement</label>
-        <select class="form-control" id="measurement" name="measurement[0]">
+        <select class="form-control" name="measurement[0]">
           <option>ml</option>
           <option>dash</option>
           <option>drop</option>
@@ -209,18 +211,18 @@
       </div>
       <div class="form-group col-12">
         <label for="item[0]">Item</label>
-        <input type="text" class="form-control" name="item[0]" id="item">
+        <input type="text" class="form-control" name="item[0]">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-6">
         <label for="quantity[1]">Quantity</label>
-        <input type="number" class="form-control" name="quantity[1]" id="quantity">
+        <input type="number" class="form-control" name="quantity[1]" id="quantity[1]">
       </div>
       <div class="form-group col-6">
         <label for="measurement[1]">Measurement</label>
-        <select class="form-control" id="measurement" name="measurement[1]">
+        <select class="form-control" name="measurement[1]">
           <option>ml</option>
           <option>dash</option>
           <option>drop</option>
@@ -229,7 +231,7 @@
       </div>
       <div class="form-group col-12">
         <label for="item[1]">Item</label>
-        <input type="text" class="form-control" name="item[1]" id="item">
+        <input type="text" class="form-control" name="item[1]">
       </div>
     </div>
     <div class="newIngre"></div>
@@ -258,14 +260,14 @@
 <!-- register form -->
 <div class="container">
   <h5>register form</h5>
-  <form>
+  <form action="/UX1/controller/register.php" method="post">
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" class="form-control" id="username">
+      <input type="text" class="form-control" id="username" name="username">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" name="password">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -276,12 +278,12 @@
   <h5>login form</h5>
   <form>
     <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" id="username">
+      <label for="login-username">Username</label>
+      <input type="text" class="form-control" id="login-username" name="login-username">
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password">
+      <label for="login-password">Password</label>
+      <input type="password" class="form-control" name="login-password" id="login-password">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

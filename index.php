@@ -276,7 +276,7 @@
 <!-- login form -->
 <div class="container">
   <h5>login form</h5>
-  <form>
+  <form action="/UX1/controller/login.php" method="post">
     <div class="form-group">
       <label for="login-username">Username</label>
       <input type="text" class="form-control" id="login-username" name="login-username">

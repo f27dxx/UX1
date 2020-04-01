@@ -52,6 +52,13 @@
     <ul class="navbar-nav mr-auto">
       <?php 
         if($_SESSION['logged_in'] == 'yes') {
+          echo '<li class="nav-item" id="nav-username">';
+          echo '<a class="nav-link active" href="#">'.'Welcome back, '.$_SESSION['username'].'</a>';
+          echo '</li>';
+        };
+      ?>
+      <?php 
+        if($_SESSION['logged_in'] == 'yes') {
           echo '<li class="nav-item" id="createRecipe">';
           echo '<a class="nav-link" href="#">Create your recipe</a>';
           echo '</li>';
@@ -189,57 +196,53 @@
 <!-- end of search result -->
 <!-- add recipe form element -->
 <div class="container form hidden">
-  <form>
+  <form action="/UX1/controller/createRecipe.php" method="POST">
     <h5>Create a recipe</h5>
     <hr>
     <div class="form-group">
       <label for="recipeName">Cocktail name:</label>
-      <input type="text" class="form-control" id="recipeName" placeholder="What's the name of your cocktail?">
+      <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="What's the name of your cocktail?">
     </div>
     <div class="form-group">
       <label for="recipeDes">Cocktail description:</label>
-      <textarea class="form-control" id="recipeDes" rows="3" placeholder="Tell us about your cocktail"></textarea>
+      <textarea class="form-control" name="recipeDes" id="recipeDes" rows="3" placeholder="Tell us about your cocktail"></textarea>
     </div>
     <hr>
     <h6>Ingredients</h6>
     <!-- ingredients -->
     <div class="form-row">
       <div class="form-group col-6">
-        <label for="quantity[0]">Quantity</label>
-        <input type="number" class="form-control" name="quantity[0]" id="quantity[0]">
+        <label for="quantity1">Quantity</label>
+        <input type="number" class="form-control" name="quantity1" id="quantity1">
       </div>
       <div class="form-group col-6">
-        <label for="measurement[0]">Measurement</label>
-        <select class="form-control" name="measurement[0]">
-          <option>ml</option>
-          <option>dash</option>
-          <option>drop</option>
-          <option>bunch</option>
+        <label for="measurement1">Measurement</label>
+        <select class="form-control" name="measurement1" id="measurement1">
+          <option value="1">ml</option>
+          <option value="2">dash</option>
         </select>
       </div>
       <div class="form-group col-12">
-        <label for="item[0]">Item</label>
-        <input type="text" class="form-control" name="item[0]">
+        <label for="item1">Item</label>
+        <input type="text" class="form-control" name="item1" id="item1">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-6">
-        <label for="quantity[1]">Quantity</label>
-        <input type="number" class="form-control" name="quantity[1]" id="quantity[1]">
+        <label for="quantity2">Quantity</label>
+        <input type="number" class="form-control" name="quantity2" id="quantity2">
       </div>
       <div class="form-group col-6">
-        <label for="measurement[1]">Measurement</label>
-        <select class="form-control" name="measurement[1]">
-          <option>ml</option>
-          <option>dash</option>
-          <option>drop</option>
-          <option>bunch</option>
+        <label for="measurement2">Measurement</label>
+        <select class="form-control" name="measurement2" id="measurement2">
+          <option value="1">ml</option>
+          <option value="2">dash</option>
         </select>
       </div>
       <div class="form-group col-12">
-        <label for="item[1]">Item</label>
-        <input type="text" class="form-control" name="item[1]">
+        <label for="item2">Item</label>
+        <input type="text" class="form-control" name="item2" id="item2">
       </div>
     </div>
     <div class="newIngre"></div>
@@ -255,7 +258,7 @@
     </div>
     <div class="form-group">
       <label for="step2">step 2</label>
-      <textarea class="form-control" id="step2" rows="3"></textarea>
+      <textarea class="form-control" id="step2" name="step2" rows="3"></textarea>
     </div>
     <div class="newStep"></div>
     <button type="button" class="btn btn-link btn-lg btn-block" id='stepButton'>Add more steps</button>

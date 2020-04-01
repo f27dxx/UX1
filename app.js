@@ -43,7 +43,7 @@ $('.spirit').on('click', function(){
 })
 
 //end of off-canvas menu
-var ingredientsCount = 2;
+var ingredientsCount = 3;
 var stepCount = 3;
 
 
@@ -62,7 +62,7 @@ $('#createRecipe').on('click', function(){
   $('.searchResult').addClass('hidden');
   $('.newIngre').empty();
   $('.newStep').empty();
-  ingredientsCount = 2;
+  ingredientsCount = 3;
   stepCount = 3;
   $("#ingreButton").text('Add more ingredients.');
   $("#stepButton").text('Add more steps.');
@@ -77,28 +77,26 @@ $('.fa-search').on('click', function(){
 $('#ingreButton').on('click', function(){
   var html = `<div class="form-row">
                 <div class="form-group col-6">
-                  <label for="quantity[${ingredientsCount}]">Quantity</label>
-                  <input type="number" class="form-control" name="quantity[${ingredientsCount}]" id="quantity">
+                  <label for="quantity${ingredientsCount}">Quantity</label>
+                  <input type="number" class="form-control" name="quantity${ingredientsCount}" id="quantity${ingredientsCount}">
                 </div>
                 <div class="form-group col-6">
-                  <label for="measurement[${ingredientsCount}]">Measurement</label>
-                  <select class="form-control" id="measurement" name="measurement[${ingredientsCount}]">
-                    <option>ml</option>
-                    <option>dash</option>
-                    <option>drop</option>
-                    <option>bunch</option>
+                  <label for="measurement${ingredientsCount}">Measurement</label>
+                  <select class="form-control" id="measurement${ingredientsCount}" name="measurement${ingredientsCount}">
+                    <option value="1">ml</option>
+                    <option value="2">dash</option>
                   </select>
                 </div>
                 <div class="form-group col-12">
-                  <label for="item[${ingredientsCount}]">Item</label>
-                  <input type="text" class="form-control" name="item[${ingredientsCount}]" id="item">
+                  <label for="item${ingredientsCount}">Item</label>
+                  <input type="text" class="form-control" name="item${ingredientsCount}" id="item${ingredientsCount}">
                 </div>
               </div>`
-  if(ingredientsCount<15) {
+  if(ingredientsCount<16) {
     $(".newIngre").append(html);
     ingredientsCount++
   }
-  if(ingredientsCount==15) {
+  if(ingredientsCount==16) {
     $("#ingreButton").text('Maxium 15 ingredients.');
   }
 })
@@ -107,7 +105,7 @@ $('#ingreButton').on('click', function(){
 $('#stepButton').on('click', function(){
   var html = `<div class="form-group">
                 <label for="step1">step ${stepCount}</label>
-                <textarea class="form-control" name="step${stepCount}" rows="3"></textarea>
+                <textarea class="form-control" id="step${stepCount}" name="step${stepCount}" rows="3"></textarea>
               </div>`
   if(stepCount<6) {
     $(".newStep").append(html);
